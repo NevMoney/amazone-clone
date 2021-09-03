@@ -35,11 +35,13 @@ function Payment() {
     getClientSecret()
   }, [basket])
 
-  console.log('client secret', clientSecret)
+  console.log('THE SECRET IS >>>', clientSecret)
+  console.log('👱', user)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setProcessing(true)
+
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
         payment_method: {
