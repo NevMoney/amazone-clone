@@ -44,7 +44,8 @@ function Login() {
       <Link to="/">
         <img
           className="login__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
+          // src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
+          src="https://i.ibb.co/MS7jt0K/amazone-black-logo.png"
           alt=""
         />
       </Link>
@@ -76,8 +77,8 @@ function Login() {
           </button>
 
           <p>
-            By continuing, you agree to Amazon Clone's Conditions of Use and
-            Privacy Notice.
+            By continuing, you agree to Amazone Conditions of Use and Privacy
+            Notice.
           </p>
         </form>
       </div>
@@ -88,7 +89,7 @@ function Login() {
         className="login__registerButton"
         onClick={register}
       >
-        Create your Amazon Account
+        Create your Amazone Account
       </button>
     </div>
   )

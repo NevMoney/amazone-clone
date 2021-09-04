@@ -20,7 +20,8 @@ function Header() {
       <Link to="/">
         <img
           className="header__logo"
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          // src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          src="https://i.ibb.co/SJSh0ZS/amazone.png"
           alt="amazon logo"
         />
       </Link>
@@ -41,15 +42,19 @@ function Header() {
           </div>
         </Link>
 
-        <div className="header__option">
-          <span className="header__optionLineOne">Returns</span>
-          <span className="header__optionLineTwo">& Orders</span>
-        </div>
+        <Link to="/orders">
+          <div className="header__option">
+            <span className="header__optionLineOne">Returns</span>
+            <span className="header__optionLineTwo">& Orders</span>
+          </div>
+        </Link>
 
-        <div className="header__option">
-          <span className="header__optionLineOne">Your</span>
-          <span className="header__optionLineTwo">Prime</span>
-        </div>
+        <Link to="/primal">
+          <div className="header__option">
+            <span className="header__optionLineOne">Your</span>
+            <span className="header__optionLineTwo">Primal</span>
+          </div>
+        </Link>
 
         <Link to="/checkout">
           <div className="header__optionBasket">

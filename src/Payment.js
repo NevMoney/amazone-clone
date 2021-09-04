@@ -37,7 +37,7 @@ function Payment() {
     getClientSecret()
   }, [basket])
 
-  console.log('THE SECRET IS >>>', clientSecret)
+  console.log('Client Secret', clientSecret)
   console.log('👱', user)
 
   const handleSubmit = async (e) => {
@@ -51,7 +51,7 @@ function Payment() {
         },
       })
       .then(({ paymentIntent }) => {
-        // noSQL database
+        // noSQL database --> firebase set user in DB with payment and basket info
         db.collection('users')
           .doc(user?.uid)
           .collection('orders')
