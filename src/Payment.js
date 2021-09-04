@@ -16,6 +16,8 @@ function Payment() {
   const stripe = useStripe()
   const elements = useElements()
 
+  let basketTotalInCents = getBasketTotal(basket)
+
   const [succeeded, setSucceeded] = useState(false)
   const [processing, setProcessing] = useState('')
   const [error, setError] = useState(null)
@@ -27,7 +29,7 @@ function Payment() {
       const response = await axios({
         method: 'post',
         // Stripe expects the total in a currencies subunits
-        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+        url: `/payments/create?total=${basketTotalInCents}`,
       })
       setClientSecret(response.data.clientSecret)
     }
@@ -49,6 +51,7 @@ function Payment() {
         },
       })
       .then(({ paymentIntent }) => {
+        // noSQL database
         db.collection('users')
           .doc(user?.uid)
           .collection('orders')
@@ -105,7 +108,7 @@ function Payment() {
                 id={item.id}
                 title={item.title}
                 image={item.image}
-                price={item.price}
+                price={item.price / 100}
                 rating={item.rating}
               />
             ))}
@@ -125,7 +128,7 @@ function Payment() {
                 <CurrencyFormat
                   renderText={(value) => <h3>Order Total: {value}</h3>}
                   decimalScale={2}
-                  value={getBasketTotal(basket)}
+                  value={getBasketTotal(basket) / 100}
                   displayType={'text'}
                   thousandSeparator={true}
                   prefix={'$'}

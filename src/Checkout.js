@@ -1,4 +1,3 @@
-// import { SubdirectoryArrowLeftOutlined } from '@material-ui/icons'
 import React from 'react'
 import './Checkout.css'
 import Subtotal from './Subtotal'
@@ -26,7 +25,7 @@ function Checkout() {
               id={item.id}
               title={item.title}
               image={item.image}
-              price={item.price}
+              price={item.price / 100}
               rating={item.rating}
             />
           ))}

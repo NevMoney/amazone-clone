@@ -23,7 +23,7 @@ function Subtotal() {
           </>
         )}
         decimalScale={2}
-        value={getBasketTotal(basket)}
+        value={getBasketTotal(basket) / 100}
         displayType={'text'}
         thousandSeparator={true}
         prefix={'$'}
