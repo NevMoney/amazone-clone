@@ -8,6 +8,7 @@ import Login from './Login'
 import Payment from './Payment'
 import Orders from './Orders'
 import Primal from './Primal'
+import CryptoLogin from './CryptoLogin'
 import { auth } from './firebase'
 import { useStateValue } from './StateProvider'
 import { loadStripe } from '@stripe/stripe-js'
@@ -41,6 +42,10 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/cryptologin">
+            <Header />
+            <CryptoLogin />
+          </Route>
           <Route path="/primal">
             <Header />
             <Primal />

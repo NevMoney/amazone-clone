@@ -5,13 +5,19 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import reducer, { initialState } from './reducer'
 import { StateProvider } from './StateProvider'
+import { MoralisProvider } from 'react-moralis'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
-      <App />
-    </StateProvider>
-  </React.StrictMode>,
+  <MoralisProvider
+    appId="S1k7puWaAqAsrVqoYeMLfI28hwLmLRtYyuoC3hNH"
+    serverUrl="https://khep691mo8hw.moralisweb3.com:2053/server"
+  >
+    <React.StrictMode>
+      <StateProvider initialState={initialState} reducer={reducer}>
+        <App />
+      </StateProvider>
+    </React.StrictMode>
+  </MoralisProvider>,
   document.getElementById('root'),
 )
 

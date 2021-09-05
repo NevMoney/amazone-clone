@@ -31,6 +31,21 @@ function Header() {
       </div>
 
       <div className="header__nav">
+        {/* crypto user login */}
+        <Link to="/cryptologin">
+          <div className="header__option">
+            <span className="header__optionLineOne">
+              Hello HODLR
+              {/* Hello {!user ? 'Crypto User' : user.email} */}
+            </span>
+            <span className="header__optionLineTwo">
+              Crypto Sign In
+              {/* {user ? 'Crypto Sign Out' : 'Crypto Sign In'} */}
+            </span>
+          </div>
+        </Link>
+
+        {/* firebase log in */}
         <Link to={!user && '/login'}>
           <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">
